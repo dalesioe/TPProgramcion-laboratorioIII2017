@@ -1,22 +1,3 @@
-function Login()
-{
-	var usuario = $("#nombre").val();
-	var password = $("#password").val();
-	var datosLogin={"user":usuario, "pass":password};
-
-	$.post("usuario/login",datosLogin,function(respuesta)	{
-		
-		if(respuesta)
-		{
-
-			window.location.href="operaciones.php";
-		}else{
-			console.log(respuesta);
-			alert("Error de usuario o contraseña");
-		}
-
-	});
-}
 function LlenarBase()
 {
 	var a=$.ajax({
@@ -35,6 +16,26 @@ function LlenarBase()
 //***********************************************USUARIOS*******************************************************************************
 //***********************************************USUARIOS*******************************************************************************
 //***********************************************USUARIOS*******************************************************************************
+function Login()
+{
+	var usuario = $("#user").val();
+	var password = $("#password").val();
+	var datosLogin={"user":usuario, "pass":password};
+
+	$.post("usuario/login",datosLogin,function(respuesta)	{
+		
+		if(respuesta)
+		{
+			debugger;
+			window.location.href="operaciones.php";
+		}else{
+debugger;
+			console.log(respuesta);
+			alert("Error de usuario o contraseña");
+		}
+
+	});
+}
 function DisplayEntre()
 {
 	if($("#chk1").is(':checked'))
@@ -277,18 +278,7 @@ function PorFecha(id)
 		$("#modalPorFecha").modal("show");
 	});
 }
-function Exportar()
-{
-	$.get('/usuario/exportar',function(respuesta){
-		if(respuesta)
-		{
 
-		}else
-		{
-			console.log(respuesta);
-		}
-	});
-}
 //***********************************************AUTOS*******************************************************************************
 //***********************************************AUTOS*******************************************************************************
 //***********************************************AUTOS*******************************************************************************

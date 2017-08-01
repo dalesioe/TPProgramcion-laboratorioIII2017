@@ -369,7 +369,7 @@ class Usuario
 						</tr>";
 			$usuario = $linea["nombre"];
 		}
-		$titulos = "<div class='col-xs-6'>
+		$titulos = "<div class='col-xs-6' id='logins'>
 						<h2 class='sub-header miLabel'>Ultimos logins de ".$usuario."</h2>
 							<div class='table-responsive'>
 								<table class='table table-striped'>
@@ -387,7 +387,13 @@ class Usuario
 		$consulta= "SELECT U.nombre, COUNT(*) as operaciones,SUM(monto) AS facturado FROM usuarios as U, registros WHERE id_usuario = :id AND id_usuario = u.id";
 		$fin = "		</table>
 					</div>
-				  <button class='boton1' onclick='Exportar()'>Exportar Excel</button>
+							<input type='button' class='boton1' id='btnExport' value='Excel' />
+			<script>
+		    $('#btnExport').click(function(e) {
+        		window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#logins').html()) + encodeURIComponent($('#tablaRegistro').html()));
+        		e.preventDefault();
+    			});
+			</script>
 				</div>";
 		$datos="";
 		$pdo = new PDO("mysql:host = localhost; dbname=estacionamiento","root","");
@@ -402,7 +408,7 @@ class Usuario
 						</tr>";
 			$usuario = $linea["nombre"];
 		}
-		$titulos = "<div class='col-xs-6'>
+		$titulos = "<div class='col-xs-6' id='tablaRegistro'>
 						<h2 class='sub-header miLabel'>Registros del usuario ".$usuario."</h2>
 							<div class='table-responsive'>
 								<table class='table table-striped'>
