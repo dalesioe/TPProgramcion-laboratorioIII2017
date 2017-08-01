@@ -387,10 +387,15 @@ class Usuario
 		$consulta= "SELECT U.nombre, COUNT(*) as operaciones,SUM(monto) AS facturado FROM usuarios as U, registros WHERE id_usuario = :id AND id_usuario = u.id";
 		$fin = "		</table>
 					</div>
-							<input type='button' class='boton1' id='btnExport' value='Excel' />
+							<input type='button' class='boton1' id='btnExportExcel' value='Excel' />
+							<input type='button' class='boton1' id='btnExportPDF' value='PDF' />
 			<script>
-		    $('#btnExport').click(function(e) {
+		    $('#btnExportExcel').click(function(e) {
         		window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#logins').html()) + encodeURIComponent($('#tablaRegistro').html()));
+        		e.preventDefault();
+    			});
+    			$('#btnExportPDF').click(function(e) {
+        		window.open('data:application/pdf,' + encodeURI($('#logins').html()) + encodeURI($('#tablaRegistro').html()));
         		e.preventDefault();
     			});
 			</script>
