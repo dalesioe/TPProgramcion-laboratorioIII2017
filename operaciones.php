@@ -289,6 +289,99 @@ include_once 'clases/lugares.php';
 </div>
 
   </div>
+   <!--MODAL ERROR ALTA USUARIO-->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="modalErrorGeneral" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">ERROR</h4>
+        </div>
+        <div class="modal-body" id="ModiUser">
+         <label>Ocurrio algun error. Por favor verifique los datos y vuelva a intentar</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+<!--MODAL RETIRO OK-->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="modalRetiroOk" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Egreso de auto</h4>
+        </div>
+        <div class="modal-body" id="ModiUser">
+         <label>Auto retirado correctamente</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+<!--MODAL AUTO OK-->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="modalAutoOk" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Ingreso de auto</h4>
+        </div>
+        <div class="modal-body" id="ModiUser">
+         <label>Auto ingresado correctamente</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+   <!--MODAL Fecha-->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="modalErrorFecha" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">ERROR</h4>
+        </div>
+        <div class="modal-body" id="ModiUser">
+         <label>No hay registros a la fecha</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+
   <!--MODAL DE UBICAR POR FECHA-->
 <div class="container">
   <!-- Modal -->
@@ -351,6 +444,7 @@ include_once 'clases/lugares.php';
       </div>
       
     </div>
+  </div>
   </div>
 </body>
 </html>

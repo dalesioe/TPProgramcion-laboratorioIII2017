@@ -26,12 +26,12 @@ function Login()
 		
 		if(respuesta)
 		{
-			debugger;
+			
 			window.location.href="operaciones.php";
 		}else{
-debugger;
+
 			console.log(respuesta);
-			alert("Error de usuario o contraseña");
+			$("#errorLogin").modal("show");
 		}
 
 	});
@@ -93,9 +93,10 @@ function NuevoUsuario()
 		if(respuesta != false)
 		{
 			$("#tablausuarios").html(respuesta);
+
 		}else
 		{
-			alert("Error al ingresar usuario");
+			$("#modalErrorGeneral").modal("show");
 		}
 	});
 }
@@ -117,7 +118,7 @@ function EliminarUsuario(id)
 			$("#tablausuarios").html(respuesta);
 		}else
 		{
-			alert("Error al eliminar usuario");
+			$("#modalErrorGeneral").modal("show");
 		}
 	});
 }
@@ -138,7 +139,7 @@ function SuspenderUsuario(id)
 			$("#tablausuarios").html(respuesta);	
 		}else
 		{
-			alert("Error al suspender");
+			$("#modalErrorGeneral").modal("show");
 		}
 		
 	});
@@ -160,7 +161,7 @@ function HabilitarUsuario(id)
 			$("#tablausuarios").html(respuesta);	
 		}else
 		{
-			alert("Error al suspender");
+			$("#modalErrorGeneral").modal("show");
 		}
 		
 	});
@@ -191,7 +192,7 @@ function ModificarUser(id)
 		}
 		else
 		{
-			alert("Error al modificar usuario");
+			$("#modalErrorGeneral").modal("show");
 		}
 	});
 }
@@ -220,7 +221,7 @@ function ConfirmarModificacion()
 		}
 		else
 		{
-			alert("error al modificar usuario");
+			$("#modalErrorGeneral").modal("show");
 		}
 	});
 }
@@ -241,7 +242,7 @@ function HistorialUser(id_usuario)
 		}
 		else
 		{
-			alert("Error al cargar informacion del usuario");
+			$("#modalErrorGeneral").modal("show");
 		}
 	});
 }
@@ -258,7 +259,7 @@ function CerrarSesion(id_usuario,login)
 	});
 	a.done(function(respuesta)
 	{
-		alert(respuesta);
+
 		window.location.href ="index.php";
 	});
 }
@@ -301,7 +302,7 @@ function HistoricoPatente()
 		//alert(respuesta);
 		if(respuesta == "error")
 		{
-			alert("No se encontro registro de la pantete");
+			$("#modalErrorGeneral").modal("show");
 		}else
 		{
 			$("#tablaEstacionados").html(respuesta);
@@ -350,16 +351,16 @@ function AutoParaIngresar()
 		//alert(respuesta)
 		if(respuesta == "errorpat")
 		{
-			alert("Patente invalida");
+			$("#modalErrorGeneral").modal("show");
 		}
 		if (respuesta != false && respuesta != "errorpat")
 		{
-			alert("Auto ingresado correctamente");
+			$("#modalAutoOk").modal("show");
 			$("#tablaEstacionados").html(respuesta);
 		}
 		if(respuesta == false)
 		{
-			alert("Error al ingresar");
+			$("#modalErrorGeneral").modal("show");
 		}
 		$("#myModal").modal("hide");
 	});
@@ -401,7 +402,7 @@ function ConfirmarRetiro()
 		//alert(respuesta);
 		$("#modalRetiro").modal("hide");
 		$("#tablaEstacionados").html(respuesta);
-		alert("Retiro Exitoso");
+		$("#modalRetiroOk").modal("show");
 	});
 }
 function RetirarPorPatente()
@@ -432,7 +433,7 @@ function RetirarPorPatente()
 			$("#modalRetiro").modal("show");			
 		}else
 		{
-			alert("Patente no encontrada");
+			$("#modalErrorGeneral").modal("show");
 			$("#modalRetiroPatente").modal("hide");
 		}
 
@@ -564,7 +565,7 @@ function ProcesarFecha()
 		}
 		else
 		{
-			alert("No hay registros a la fecha");
+				$("#modalErrorFecha").modal("show");
 		}
 		$("#modalPorFecha").modal("hide");
 	});
